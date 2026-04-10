@@ -1,6 +1,3 @@
-
-
-
 # 1. Custom Reset Logic Configuration
 password-reset:
   expiry-minutes: 30
@@ -13,15 +10,10 @@ server:
 spring:
   application:
     name: auth-service
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          lower-case-service-id: true
-
-  # Database Configuration
+  
+  # Database Configuration (Using TiDB Cloud)
   datasource:
-    url: jdbc:mysql://3utXacfbRoTt2ay.root:LbgcFSh3LDgvxXgY@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
+    url: jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
     username: 3utXacfbRoTt2ay.root
     password: LbgcFSh3LDgvxXgY
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -30,7 +22,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-
 
   mail:
     host: smtp.sendgrid.net
@@ -44,22 +35,23 @@ spring:
           starttls:
             enable: true
 
-# 4. App URLs
+# 4. App URLs (Updated for Production)
 app:
   mail:
     from: unevallalit6499@gmail.com
   frontend:
-    url: http://localhost:4200/reset-password?token=
+    # Update this to your actual deployed frontend URL when ready
+    url: https://internship-project-frontend-sxg9.vercel.app/reset-password?token=
   backend:
-    url: http://localhost:8081
+    url: https://projectbackend-authservice.onrender.com
 
-# 5. Service Discovery (Eureka)
+# 5. Service Discovery (Eureka) - UPDATED FOR LIVE LINK
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.57:8761/eureka/
+      # Use your new live Eureka URL here
+      defaultZone: https://projectbackend-serviceregistery-1.onrender.com/eureka/
   instance:
-    prefer-ip-address: true
-    hostname: localhost
-
-
+    # In cloud environments like Render, prefer-ip-address should often be false 
+    # so services register with their public domain name instead of internal IPs.
+    prefer-ip-address: false
