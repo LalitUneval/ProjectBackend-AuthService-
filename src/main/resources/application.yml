@@ -21,9 +21,9 @@ spring:
 
   # Database Configuration
   datasource:
-    url: jdbc:mysql://localhost:3307/auth_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: root
-    password: pmg82004
+    url: jdbc:mysql://3utXacfbRoTt2ay.root:LbgcFSh3LDgvxXgY@gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
+    username: 3utXacfbRoTt2ay.root
+    password: LbgcFSh3LDgvxXgY
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
