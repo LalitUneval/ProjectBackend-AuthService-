@@ -46,16 +46,16 @@ app:
     url: https://projectbackend-authservice.onrender.com
 
 # 5. Service Discovery (Eureka) - UPDATED FOR LIVE LINK
-eureka:
-  client:
-    service-url:
-      defaultZone: https://projectbackend-serviceregistery-1.onrender.com/eureka/
-  instance:
-    prefer-ip-address: false
-    hostname: projectbackend-authservice.onrender.com
-    non-secure-port: 443
-    non-secure-port-enabled: true
-    secure-port-enabled: false
-    status-page-url: https://projectbackend-authservice.onrender.com/actuator/info
-    health-check-url: https://projectbackend-authservice.onrender.com/actuator/health
-    home-page-url: https://projectbackend-authservice.onrender.com/
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: https://projectbackend-serviceregistery-1.onrender.com/eureka/
+#  instance:
+#    prefer-ip-address: false
+#    hostname: projectbackend-authservice.onrender.com
+#    non-secure-port: 443
+#    non-secure-port-enabled: true
+#    secure-port-enabled: false
+#    status-page-url: https://projectbackend-authservice.onrender.com/actuator/info
+#    health-check-url: https://projectbackend-authservice.onrender.com/actuator/health
+#    home-page-url: https://projectbackend-authservice.onrender.com/
