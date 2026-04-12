@@ -49,9 +49,13 @@ app:
 eureka:
   client:
     service-url:
-      # Use your new live Eureka URL here
       defaultZone: https://projectbackend-serviceregistery-1.onrender.com/eureka/
   instance:
-    # In cloud environments like Render, prefer-ip-address should often be false 
-    # so services register with their public domain name instead of internal IPs.
     prefer-ip-address: false
+    hostname: projectbackend-authservice.onrender.com
+    non-secure-port: 443
+    non-secure-port-enabled: true
+    secure-port-enabled: false
+    status-page-url: https://projectbackend-authservice.onrender.com/actuator/info
+    health-check-url: https://projectbackend-authservice.onrender.com/actuator/health
+    home-page-url: https://projectbackend-authservice.onrender.com/
