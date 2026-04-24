@@ -99,6 +99,18 @@ public class GlobalExceptionHandler {
         );
     }
 
+    @ExceptionHandler(SamePasswordException.class)
+    private ResponseEntity<ErrorResponse> handleSamePassword(
+            SamePasswordException ex,
+            HttpServletRequest request
+    ){
+        return buildErrorResponse(
+                ex.getMessage(),
+                HttpStatus.UNAUTHORIZED,
+                request.getRequestURI()
+        );
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(
             Exception ex,
